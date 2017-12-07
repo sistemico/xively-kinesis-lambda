@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "strict": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "baseUrl": "./src",
+    "paths": {
+      "database/*": [
+        "database/*"
+      ],
+      "lib/*": [
+        "lib/*"
+      ],
+      "processors/*": [
+        "processors/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "src/**/*.test.ts",
+    "test/**"
+  ]
+}

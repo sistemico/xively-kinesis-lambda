@@ -1,0 +1,287 @@
+{
+  "extends": [
+    "tslint-eslint-rules"
+  ],
+  "rules": {
+    // Expects certain multi-line expressions to be aligned:
+    // something(
+    //   aligned,
+    //   aligned,
+    //   aligned, notaligned
+    // )
+    "align": [
+      true,
+      "parameters",
+      "arguments",
+      "statements"
+    ],
+
+    // Consistent array literals
+    "array-bracket-spacing": [
+      true,
+      "never",
+      {
+        "singleValue": false,
+        "objectsInArrays": false,
+        "arraysInArrays": false
+      }
+    ],
+
+    // Suggests to convert () => { return x; } to () => x.
+    "arrow-return-shorthand": true,
+
+    // Disallows these functions to be used
+    "ban": [
+      true,
+      ["_", "forEach"], // Use native method Array.forEach()
+      ["_", "each"], // Use native method Array.forEach()
+      ["$", "each"] // Use native method Array.forEach()
+    ],
+
+    // Disallow or enforce spaces inside of single line blocks
+    "block-spacing": true,
+
+    // Enforce 1tbs and disallow entire if statements inline
+    "brace-style": [
+      true,
+      "1tbs",
+      {
+        "allowSingleLine": false
+      }
+    ],
+
+    // Enforces PascalCased class and interface names
+    "class-name": true,
+
+    // Enforces that comments start with "// " rather than "//"
+    // Allows usage of automatic block commenting/uncommenting
+    "comment-format": [
+      true,
+      "check-space"
+    ],
+
+    // Always use curly braces
+    "curly": true,
+
+    // We don't care if the file ends with a new line or not
+    "eofline": false,
+
+    // Setting this to true adds the requirement to have an if statement inside a for-in loop.
+    // This aims to address looping through complex objects and their properties.
+    // We'll likely be using lodash, so this doesn't quite matter
+    "forin": false,
+
+    // Enforce error handling in callbacks
+    "handle-callback-err": true,
+
+    // Enforce spaces for indentation
+    "indent": [true, "spaces"],
+
+    // Ensures proper spacing between import statement keywords
+    "import-spacing": true,
+
+    // Don't care about prefixes on interface names
+    "interface-name": [false],
+
+    // Don't use labels in inappropriate places
+    "label-position": true,
+
+    // No lines longer than 200 chars
+    // TODO: .vscode?
+    "max-line-length": [true, 200],
+
+    // only as type assertions work in .tsx files
+    "no-angle-bracket-type-assertion": true,
+
+    // keeps code a little more optimized in case anyone tries to arguments.callee
+    "no-arg": true,
+
+    // we use bitwise
+    "no-bitwise": false,
+
+    // Prevents accidential if(this = true) rather than ==
+    "no-conditional-assignment": true,
+
+    // prevents accidential commits of debugging code
+    "no-console": [
+      true,
+      "debug",
+      "info",
+      "time",
+      "timeEnd",
+      "trace"
+    ],
+
+    // prevents if(true){that()}
+    "no-constant-condition": true,
+
+    // Edge case, but prevents currupting data with regex
+    "no-control-regex": true,
+
+    // things like new Boolean() are mostly unnessacary
+    "no-construct": true,
+
+    // The debugger statement is used to tell the JavaScript engine to open a
+    // debugger if one is available and treat the statement as a breakpoint.
+    // Don't commit code with that.
+    "no-debugger": true,
+
+    // Prevent likely typos and unreachable code
+    "no-duplicate-case": true,
+
+    // prevents typos and enforces better variable naming
+    "no-duplicate-variable": true,
+
+    // disallows empty blocks
+    "no-empty": true,
+
+    // "aimed at highlighting possible typos and unexpected behavior in regular expressions"
+    "no-empty-character-class": true,
+
+    // disallows eval
+    "no-eval": true,
+
+    // disallow assigning to the exception in a catch block
+    "no-ex-assign": true,
+
+    // TODO: Strange instance in xively-comm.ts which isn't being caught where double-negation occurs
+    // Disallow double-negation!!
+    "no-extra-boolean-cast": true,
+
+    // Prevent typos - style only
+    "no-extra-semi": true,
+
+    // Only allow 'var' and 'function' at top-level of app
+    "no-inner-declarations": [
+      true,
+      "both"
+    ],
+
+    // Catch typos
+    "no-invalid-regexp": true,
+
+    // Avoid ugly
+    "no-irregular-whitespace": true,
+
+    // Multiple spaces in a row that are not used for indentation are typically mistakes
+    "no-multi-spaces": true,
+
+    // disallow multiple spaces in a regular expression literal
+    "no-regex-spaces": true,
+
+    // disallow sparse arrays
+    "no-sparse-arrays": true,
+
+    // allows us to use object['property'] and not only object.property
+    "no-string-literal": false,
+
+    // Flags throwing plain strings or concats of strings bc only Errors produce proper stack traces
+    // "no-string-throw": true,
+
+    // allows switch blocks with no breaks after each case
+    "no-switch-case-fall-through": false,
+
+    // Keeps version control diffs clean
+    "no-trailing-whitespace": false,
+
+    // extension of the semi rule that catches odd scenarios
+    "no-unexpected-multiline": true,
+
+    // disallow control flow statements in finally blocks
+    "no-unsafe-finally": true,
+
+    // If it's unused it's probably a typo or a bug
+    "no-unused-expression": true,
+
+    // Disallows usage of the var keyword. Use let or const instead
+    "no-var-keyword": true,
+
+    // TODO: deferring correcting these offenders for now
+    // as we'll be removing many of those files along with server-pruning
+    // require or disallow padding inside curly braces
+    // Output error is 'A space is required after '{'' and 'A space is required before '}''
+    "object-curly-spacing": true,
+
+    // "consistent": Property names should either all be quoted or unquoted.
+    "object-literal-key-quotes": [true, "consistent"],
+
+    // TODO
+    // "object-literal-sort-keys": true,
+
+    // enforce "} else {"
+    "one-line": [
+      true,
+      "check-catch",
+      "check-else",
+      "check-whitespace",
+      "check-open-brace",
+      "check-finally"
+    ],
+
+    // use only single quotes for string literals
+    "quotemark": [true, "single", "jsx-single"],
+
+    // prevent int parsing errors
+    "radix": true,
+
+    // Always require semicolons
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+
+    // Requires all switch statements to have a default
+    "switch-default": true,
+
+    // Require parens in arrow function arguments
+    // TODO: there are a handful of offending files but most are in services/
+    // which will be removed w/ server-pruning branch - deferring correcting these for now
+    // Error outputting is 'Expected parentheses around arrow function argument'
+    "ter-arrow-parens": true,
+
+    // Require space before/after arrow function's arrow
+    "ter-arrow-spacing": true,
+
+    // Suggest using arrow functions as callbacks
+    "ter-prefer-arrow-callback": true,
+
+    // Disallows [1,2,3,] on single line or with each element on a line. [1,2,3] is valid
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+
+    // We're using typescript. Of course we want to be type safe.
+    "triple-equals": [
+      true,
+      "allow-null-check"
+    ],
+
+    // Interestingly enough, NaN !== NaN - use the function instead
+    "use-isnan": true,
+
+    // Ensure that the results of typeof are compared against a valid string
+    "valid-typeof": true,
+
+    // Enforces variable name conventions
+    "variable-name": [
+      true,
+      "ban-keywords", // Don't use reserved words
+      "check-format", // Only camelCase or UPPER_CASED are allowed
+      "allow-leading-underscore", // Used to indicate private props
+      "allow-pascal-case" // Allow PascalCase
+    ],
+
+    // Enforce whitespace around these things
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-module",
+      "check-separator",
+      "check-type",
+      "check-typecast"
+    ]
+  }
+}

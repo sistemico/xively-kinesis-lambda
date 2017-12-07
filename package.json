@@ -1,0 +1,63 @@
+{
+  "name": "xively-kinesis-lambda",
+  "version": "0.0.1",
+  "description": "Xively Lambda boilerplate project",
+  "keywords": [
+    "aws",
+    "kinesis",
+    "lambda",
+    "xively"
+  ],
+  "license": "UNLICENSED",
+  "author": "Sebastián Galiano <sebastian.galiano@altoros.com> ",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sistemico/xively-kinesis-lambda.git"
+  },
+  "engines": {
+    "node": "<6.10.0",
+    "yarn": "*"
+  },
+  "scripts": {
+    "build": "webpack",
+    "build:dev": "webpack --watch",
+    "clean": "rimraf dist/",
+    "deploy": "node scripts/deploy"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "dotenv": "^4.0.0",
+    "mqtt": "^2.14.0",
+    "node-uuid": "1.4.8",
+    "pg": "^7.4.0",
+    "pino": "^4.10.2"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^0.0.22",
+    "@types/bluebird": "^3.5.18",
+    "@types/bluebird-global": "^3.5.3",
+    "@types/node": "6.x",
+    "@types/node-uuid": "^0.0.28",
+    "@types/pg": "^7.4.1",
+    "@types/pino": "^4.7.0",
+    "@types/webpack": "^3.8.1",
+    "aws-sdk": "^2.166.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "colors": "^1.1.2",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "memory-fs": "^0.4.1",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.6.2",
+    "shebang-loader": "^0.0.1",
+    "ts-loader": "^3.2.0",
+    "tslint": "^5.8.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0",
+    "zip-webpack-plugin": "^2.1.0"
+  }
+}
